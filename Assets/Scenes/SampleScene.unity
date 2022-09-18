@@ -791,7 +791,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 982fd217a819c844ebe3f12d9dd908ce, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1640,10 +1640,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  SelectorUi: {fileID: 0}
-  Hotkey1: {fileID: 2038974677}
-  Hotkey2: {fileID: 1162446856}
-  Hotkey3: {fileID: 556257943}
   rotateAmount: 45
   GridSize: 0.5
   CanPlace: 1
@@ -1721,7 +1717,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8e33910a271905f4396a6a447ad83a9f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2572,7 +2568,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1a5045f83ebaca347b54bfa38e5b18cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
