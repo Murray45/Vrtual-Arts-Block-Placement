@@ -7,20 +7,15 @@ public class PlacementManager : MonoBehaviour
 {
     
     public GameObject[] Objects;
-    private GameObject PendingObjects;
+    public GameObject PendingObjects;
     [SerializeField] private Material[] materials;
     // position to place object
     private Vector3 pos;
 
     private RaycastHit hit;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private int Raydist;
-    [SerializeField] GameObject SelectorUi;
-    
-
-    [SerializeField] GameObject Hotkey1;
-    [SerializeField] GameObject Hotkey2;
-    [SerializeField] GameObject Hotkey3;
+   
+   
     private GameObject CachedObj;
     
     public float rotateAmount;
@@ -52,8 +47,8 @@ public class PlacementManager : MonoBehaviour
             {
                 PendingObjects.transform.position = pos;
             }
-
-            if (Input.GetMouseButtonDown(0) && !SelectorUi.activeSelf && CanPlace)
+            UpdateMaterials();
+            if (Input.GetMouseButtonDown(0) && CanPlace)
             {
                 PlaceObject();
             }
@@ -61,12 +56,10 @@ public class PlacementManager : MonoBehaviour
             {
                 RotateObject();
             }
-            if (Input.GetMouseButtonDown(1) && !SelectorUi.activeSelf)
-            {
-                
-            }
-            UpdateMaterials();
+          
+            
         }
+       
     }
 
     public void PlaceObject()
@@ -84,9 +77,9 @@ public class PlacementManager : MonoBehaviour
     private void FixedUpdate()
     {
         // Raycast orgins from the and mouse position
-        Ray raycast = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(raycast, out hit, Raydist, layerMask))
+        if(Physics.Raycast(ray, out hit, 1000, layerMask))
         {
             // The point that receives the raycast
             pos = hit.point;
@@ -97,24 +90,7 @@ public class PlacementManager : MonoBehaviour
 
   
 
-    public void ChangeHotKey(int slot)
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            
-           
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            slot = 2;
-        } 
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            slot = 3;
-        }
-    }
+    
 
     void UpdateMaterials()
     {
