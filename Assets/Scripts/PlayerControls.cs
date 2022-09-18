@@ -6,6 +6,7 @@ public class PlayerControls : MonoBehaviour
 {
     [SerializeField] GameObject gameObjectUi;
     [SerializeField] GameObject placementMang;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +35,7 @@ public class PlayerControls : MonoBehaviour
                 gameObjectUi.SetActive(true);
             }
         }
+
     }
+ 
 }
